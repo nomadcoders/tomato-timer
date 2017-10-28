@@ -9,7 +9,6 @@ class Timer extends Component {
       elapsedTime,
       timerDuration,
       startTimer,
-      pauseTimer,
       restartTimer,
       addSecond
     } = this.props;
@@ -20,9 +19,10 @@ class Timer extends Component {
           <Text style={styles.time}>25:00</Text>
         </View>
         <View style={styles.lower}>
-          {isPlaying && <Button iconName={"ios-pause"} />}
           {!isPlaying && <Button iconName={"ios-play"} onPress={startTimer} />}
-          {isPlaying && <Button iconName={"ios-square"} />}
+          {isPlaying && (
+            <Button iconName={"ios-square"} onPress={restartTimer} />
+          )}
         </View>
       </View>
     );
