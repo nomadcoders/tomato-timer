@@ -4,8 +4,15 @@ import Button from "../Button";
 
 class Timer extends Component {
   render() {
-    console.log(this.props);
-    const { isPlaying, elapsedTime, timerDuration } = this.props;
+    const {
+      isPlaying,
+      elapsedTime,
+      timerDuration,
+      startTimer,
+      pauseTimer,
+      restartTimer,
+      addSecond
+    } = this.props;
     return (
       <View style={styles.container}>
         <StatusBar barStyle="light-content" />
@@ -14,7 +21,7 @@ class Timer extends Component {
         </View>
         <View style={styles.lower}>
           {isPlaying && <Button iconName={"ios-pause"} />}
-          {!isPlaying && <Button iconName={"ios-play"} />}
+          {!isPlaying && <Button iconName={"ios-play"} onPress={startTimer} />}
           {isPlaying && <Button iconName={"ios-square"} />}
         </View>
       </View>

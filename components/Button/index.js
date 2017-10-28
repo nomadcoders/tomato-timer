@@ -5,7 +5,7 @@ import { Ionicons } from "@expo/vector-icons";
 
 function Button({ iconName, onPress }) {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPressOut={onPress}>
       <View style={styles.container}>
         <Ionicons name={iconName} size={40} color="#CE0B24" />
       </View>
