@@ -46,9 +46,11 @@ class Timer extends Component {
           </Text>
         </View>
         <View style={styles.lower}>
-          {!isPlaying && <Button iconName={"ios-play"} onPress={startTimer} />}
+          {!isPlaying && (
+            <Button iconName={"play-circle"} onPress={startTimer} />
+          )}
           {isPlaying && (
-            <Button iconName={"ios-square"} onPress={restartTimer} />
+            <Button iconName={"stop-circle"} onPress={restartTimer} />
           )}
         </View>
       </View>
@@ -66,7 +68,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",
-    justifyContent: "space-between",
     paddingLeft: 25,
     paddingRight: 25
   },
